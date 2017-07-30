@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TestviewConfig(AppConfig):
-    name = 'index'
+    name = 'splash'

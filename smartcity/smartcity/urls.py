@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from index import views
+from django.conf.urls import include
+from splash import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^splash/', include('splash.urls')),
+    # the above maps any URLs starting
+    # with splash/ to be handled by
+    # the splash application
     url(r'^admin/', admin.site.urls),
 ]
