@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class TestviewConfig(AppConfig):
+class SplashConfig(AppConfig):
     name = 'splash'
