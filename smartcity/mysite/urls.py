@@ -1,4 +1,4 @@
-"""smartcity URL Configuration
+"""mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -13,16 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.conf.urls import include
-from splash import views
+from splash import views as splashviews
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^splash/', include('splash.urls')),
-    # the above maps any URLs starting
-    # with splash/ to be handled by
-    # the splash application
+    url(r'^$', splashviews.index, name = 'index'),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/', include('login.urls')),
+    url(r'^hotel/', include('hotel.urls')),
+
 ]
