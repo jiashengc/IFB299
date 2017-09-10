@@ -15,8 +15,8 @@ def register(request):
             user.first_name = form.cleaned_data.get('first_name')
             user.last_name = form.cleaned_data.get('last_name')
             user.save()
-            # raw_password = form.cleaned_data.get('password1')
-            # user = authenticate(username=user.username, password=raw_password)
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
             login(request, user)
             return redirect('index')
     else:
