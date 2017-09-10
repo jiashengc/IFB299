@@ -6,15 +6,17 @@ from forms.forms import RegisterForm
 
 # Create your views here.
 def register(request):
-    if request.method == 'POSt':
+    if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()
-            user.profile.birth_date = form.cleaned_data.get('birth_date')
+            user.birth_date = form.cleaned_data.get('birth_date')
+            user.first_name = form.cleaned_data.get('first_name')
+            user.last_name = form.cleaned_data.get('last_name')
             user.save()
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=user.username, password=raw_password)
+            # raw_password = form.cleaned_data.get('password1')
+            # user = authenticate(username=user.username, password=raw_password)
             login(request, user)
             return redirect('index')
     else:
