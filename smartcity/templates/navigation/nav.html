@@ -30,11 +30,13 @@
                     <a class="nav-link" href="#">Log In</a>
                 </li>
             {% endif %}
+            <li class="nav-item">
+                <a class="nav-link" onclick="location.href = 'admin';">Admin</a>
+            </li>
         </ul>
     </div>
 
-    <div class="container">
-
+    <div class="container-fluid">
         {% block content %}
         {% endblock %}
     </div>
