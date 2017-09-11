@@ -21,7 +21,7 @@ from splash import views as splashviews
 
 urlpatterns = [
     url(r'^$', splashviews.index, name = 'index'),
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls, name='adminDash'),
     url(r'^login/', include('login.urls')),
     url(r'^hotel/', include('hotel.urls')),
     url(r'^register/', include('register.urls')),

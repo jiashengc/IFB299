@@ -16,7 +16,7 @@
     <div class="navigation">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" onclick="location.href = '' ">Home</a>
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
             {% if user.is_authenticated %}
                 <li class="nav-item">
@@ -24,14 +24,14 @@
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="{% url 'login' %}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
+                    <a class="nav-link" href="{% url 'register' %}">Log In</a>
                 </li>
             {% endif %}
             <li class="nav-item">
-                <a class="nav-link" onclick="location.href = 'admin';">Admin</a>
+                <a class="nav-link" href="/admin">Admin</a>
             </li>
         </ul>
     </div>
