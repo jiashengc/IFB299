@@ -1,0 +1,9 @@
+.nav-link {
+    color: blue;
+    cursor: pointer;
+}
+
+.navigation {
+    background-color: white;
+    min-height: 50px;
+}
