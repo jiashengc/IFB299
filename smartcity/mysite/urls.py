@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^login/', include('login.urls')),
     url(r'^hotel/', include('hotel.urls')),
     url(r'^register/', include('register.urls')),
+    url(r'^city/', include('city.urls')),
 ]
