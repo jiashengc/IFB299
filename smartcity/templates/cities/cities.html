@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <!-- Hidden city div -->
+    <!-- Hidden cities div -->
     <div class="city-container" style="opacity: 0">
         <div class="city">
             <h2 class="city-name"></h2>
@@ -31,7 +31,7 @@
     window.cities = {{ cities | safe }};
 
     for (let i = 0; i < cities.length; i++) {
-        let cityContainer = document.getElementsByClassName('city-container')[0];
+        let cityContainer = document.getElementsByClassName('city-container')[0].cloneNode(true);
         cityContainer.style.opacity = 1;
 
         let city = cities[i].fields;

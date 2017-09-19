@@ -1,0 +1,48 @@
+{% extends 'navigation/nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+</head>
+
+<div class="splash">
+    <div class="container">
+        <div class="row">
+            <div id="cities-container">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden cities div -->
+    <div class="city-container" style="opacity: 0">
+        <div class="city">
+            <h2 class="city-name"></h2>
+            <p class="city-description"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.cities = {{ city | safe }};
+    let city = cities[0].fields;
+
+    let cityContainer = document.getElementsByClassName('city-container')[0].cloneNode(true);
+    cityContainer.style.opacity = 1;
+
+    let name = city.name;
+    let description = city.description;
+
+    cityContainer.getElementsByClassName('city-name')[0].innerHTML = name;
+    cityContainer.getElementsByClassName('city-description')[0].innerHTML = description;
+
+    document.getElementById('cities-container').innerHTML += cityContainer.innerHTML;
+</script>
+
+</html>
+
+{% endblock %}

@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('emailAddress', models.EmailField(max_length=254)),
                 ('phone', models.CharField(max_length=14, unique=True)),
                 ('type', models.CharField(choices=[('CL', 'College'), ('LI', 'Library'), ('IN', 'Industry'), ('HO', 'Hotel'), ('ZO', 'Zoo'), ('MU', 'Musuem'), ('RE', 'Restaurant'), ('MA', 'Mall')], max_length=2)),
-                ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='splash.City')),
+                ('cities', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='splash.City')),
             ],
         ),
     ]
