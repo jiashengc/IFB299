@@ -12,7 +12,11 @@
 <div class="splash">
     <div class="container">
         <div class="row">
-            <div id="cities-container">
+            <div class="col-12" id="cities-container">
+
+            </div>
+
+            <div class="col-12" id="location-types">
 
             </div>
         </div>
@@ -41,6 +45,28 @@
     cityContainer.getElementsByClassName('city-description')[0].innerHTML = description;
 
     document.getElementById('cities-container').innerHTML += cityContainer.innerHTML;
+
+    let type = {
+            "CL": "Colleges",
+            "LI": "Libraries",
+            "IN": "Industries",
+            "HO": "Hotels",
+            "ZO": "Zoos",
+            "MU": "Museums",
+            "RE": "Restaurants",
+            "MA": "Malls",
+            "PA": "Parks"
+    };
+
+
+    for (let t in type){
+        if (type.hasOwnProperty(t)) {
+             let key = t;
+             let value = type[t];
+
+             document.getElementById('location-types').innerHTML += '<a href="' + key + '">' + value + '</a><br>';
+        }
+}
 </script>
 
 </html>

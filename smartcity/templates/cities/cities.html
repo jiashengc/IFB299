@@ -38,7 +38,7 @@
         let name = city.name;
         let description = city.description;
 
-        cityContainer.getElementsByClassName('city-name')[0].innerHTML = name;
+        cityContainer.getElementsByClassName('city-name')[0].innerHTML = '<a href="' + name + '">' + name + '</a>';
         cityContainer.getElementsByClassName('city-description')[0].innerHTML = description;
 
         document.getElementById('cities-container').innerHTML += cityContainer.innerHTML;
