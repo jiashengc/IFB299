@@ -8,6 +8,7 @@
       "emailAddress": "",
       "phone": "0734034166",
       "type": "LI",
+      "description": "",
       "city": 1
     }
   },
@@ -20,6 +21,7 @@
       "emailAddress": "",
       "phone": "0731631689",
       "type": "LI",
+      "description": "",
       "city": 1
     }
   },
@@ -32,6 +34,7 @@
       "emailAddress": "",
       "phone": "0738407666",
       "type": "LI",
+      "description": "",
       "city": 1
     }
   },
@@ -44,6 +47,7 @@
       "emailAddress": "",
       "phone": "0731382000",
       "type": "CL",
+      "description": "",
       "city": 1
     }
   },
@@ -56,6 +60,7 @@
       "emailAddress": "",
       "phone": "0733651111",
       "type": "CL",
+      "description": "",
       "city": 1
     }
   },
@@ -68,6 +73,7 @@
       "emailAddress": "",
       "phone": "0734038888",
       "type": "PA",
+      "description": "",
       "city": 1
     }
   },
@@ -80,6 +86,7 @@
       "emailAddress": "",
       "phone": "0733379000",
       "type": "HO",
+      "description": "",
       "city": 1
     }
   },
@@ -92,6 +99,7 @@
       "emailAddress": "",
       "phone": "0733781366",
       "type": "ZO",
+      "description": "",
       "city": 1
     }
   },
@@ -104,6 +112,7 @@
       "emailAddress": "",
       "phone": "0730066290",
       "type": "MA",
+      "description": "",
       "city": 1
     }
   },
@@ -116,6 +125,7 @@
       "emailAddress": "",
       "phone": "0731385370",
       "type": "MU",
+      "description": "",
       "city": 1
     }
   },
@@ -128,6 +138,7 @@
       "emailAddress": "",
       "phone": "0730200600",
       "type": "RE",
+      "description": "",
       "city": 1
     }
   },
@@ -140,6 +151,7 @@
       "emailAddress": "",
       "phone": "0734527226",
       "type": "IN",
+      "description": "",
       "city": 1
     }
   }

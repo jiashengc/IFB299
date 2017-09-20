@@ -17,7 +17,7 @@ class Location(models.Model):
         ('IN', 'Industry'),
         ('HO', 'Hotel'),
         ('ZO', 'Zoo'),
-        ('MU', 'Musuem'),
+        ('MU', 'Museum'),
         ('RE', 'Restaurant'),
         ('MA', 'Mall'),
         ('PA', 'Park')
@@ -29,6 +29,7 @@ class Location(models.Model):
     emailAddress = models.EmailField()
     phone = models.CharField(max_length=14, unique=True)
     type = models.CharField(max_length=2, choices=TYPE)
+    description = models.CharField(max_length=1080)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
 
     def __unicode__(self):

@@ -1,0 +1,57 @@
+{% extends 'navigation/nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+</head>
+
+<div class="splash">
+    <div class="container">
+        <div class="location-container" style="opacity: 0">
+            <div class="location">
+                <h3 class="location-name"></h3>
+
+                <span>City:</span>
+                <p class="location-city"></p>
+
+                <span>Description:</span>
+                <p class="location-description"></p>
+
+                <span>Address:</span>
+                <p class="location-address"></p>
+
+                <span>Email Address:</span>
+                <p class="location-emailAddress"></p>
+
+                <span>Phone:</span>
+                <p class="location-phone"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden cities div -->
+    <div class="city-container" style="opacity: 0">
+        <div class="city">
+            <h2 class="city-name"></h2>
+            <p class="city-description"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.city = {{ city | safe }};
+    window.locations = {{ location | safe }};
+
+    let cityName = city[0].fields.name;
+    let location = locations[0].fields;
+    let locationName = location.name;
+    let description = location.description;
+</script>
+
+</html>
+
+{% endblock %}
