@@ -32,5 +32,6 @@ class Location(models.Model):
     description = models.CharField(max_length=1080)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
 
+
     def __unicode__(self):
         return self.name

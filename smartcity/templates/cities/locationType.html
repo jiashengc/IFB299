@@ -73,7 +73,7 @@
         let emailAddress = location.emailAddress;
         let phone = location.phone;
 
-        locationContainer.getElementsByClassName('location-name')[0].innerHTML = name;
+        locationContainer.getElementsByClassName('location-name')[0].innerHTML = '<a href="' + locations[i].pk + '">' +  name + '</a>';
         locationContainer.getElementsByClassName('location-address')[0].innerHTML = address;
         locationContainer.getElementsByClassName('location-emailAddress')[0].innerHTML = emailAddress;
         locationContainer.getElementsByClassName('location-phone')[0].innerHTML = phone;
