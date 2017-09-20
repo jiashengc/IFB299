@@ -23,8 +23,7 @@ def locationType(request, cityName, locationType):
     foundCity[0] = models.City.objects.get(name=cityName)
     pk = foundCity[0].pk
 
-    foundLocations = [100]
-    foundLocations[0] = models.Location.objects.get(city=pk)
+    foundLocations = models.Location.objects.filter(city=pk)
 
     return render(request, 'cities/locationType.html', context = {
         "city": serializers.serialize('json', foundCity),

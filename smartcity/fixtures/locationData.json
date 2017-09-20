@@ -10,5 +10,137 @@
       "type": "LI",
       "city": 1
     }
+  },
+  {
+    "pk": 2,
+    "model": "splash.location",
+    "fields": {
+      "name": "UQ/Mater McAuley Library",
+      "address": "Mater Health Sciences, South Brisbane QLD 4101",
+      "emailAddress": "",
+      "phone": "0731631689",
+      "type": "LI",
+      "city": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "splash.location",
+    "fields": {
+      "name": "State Library of Queensland",
+      "address": "Stanley Pl, South Brisbane QLD 4101",
+      "emailAddress": "",
+      "phone": "0738407666",
+      "type": "LI",
+      "city": 1
+    }
+  },
+  {
+    "pk": 4,
+    "model": "splash.location",
+    "fields": {
+      "name": "Queensland University of Technology",
+      "address": "2 George St, Brisbane City QLD 4000",
+      "emailAddress": "",
+      "phone": "0731382000",
+      "type": "CL",
+      "city": 1
+    }
+  },
+  {
+    "pk": 5,
+    "model": "splash.location",
+    "fields": {
+      "name": "University of Queensland",
+      "address": "St Lucia QLD 4072",
+      "emailAddress": "",
+      "phone": "0733651111",
+      "type": "CL",
+      "city": 1
+    }
+  },
+  {
+    "pk": 6,
+    "model": "splash.location",
+    "fields": {
+      "name": "City Botanic Gardens",
+      "address": "Alice St, Brisbane City QLD 4000",
+      "emailAddress": "",
+      "phone": "0734038888",
+      "type": "PA",
+      "city": 1
+    }
+  },
+  {
+    "pk": 7,
+    "model": "splash.location",
+    "fields": {
+      "name": "ibis Style Brisbane Elizabeth Street",
+      "address": "40 Elizabeth St, Brisbane City QLD 4000",
+      "emailAddress": "",
+      "phone": "0733379000",
+      "type": "HO",
+      "city": 1
+    }
+  },
+  {
+    "pk": 8,
+    "model": "splash.location",
+    "fields": {
+      "name": "Lone Pine Koala Sanctuary",
+      "address": "708 Jesmond Rd, Fig Tree Pocket QLD 4069",
+      "emailAddress": "",
+      "phone": "0733781366",
+      "type": "ZO",
+      "city": 1
+    }
+  },
+  {
+    "pk": 9,
+    "model": "splash.location",
+    "fields": {
+      "name": "Queen Street Mall",
+      "address": "Queen Street mall, Queen St, Brisbane City QLD 4000",
+      "emailAddress": "",
+      "phone": "0730066290",
+      "type": "MA",
+      "city": 1
+    }
+  },
+  {
+    "pk": 10,
+    "model": "splash.location",
+    "fields": {
+      "name": "QUT Art Musuem",
+      "address": "2 George St, Brisbane City QLD 4000",
+      "emailAddress": "",
+      "phone": "0731385370",
+      "type": "MU",
+      "city": 1
+    }
+  },
+  {
+    "pk": 11,
+    "model": "splash.location",
+    "fields": {
+      "name": "Stokehouse Q",
+      "address": "Sidon St, South Brisbane QLD 4101",
+      "emailAddress": "",
+      "phone": "0730200600",
+      "type": "RE",
+      "city": 1
+    }
+  },
+  {
+    "pk": 12,
+    "model": "splash.location",
+    "fields": {
+      "name": "Defence Industries",
+      "address": "Level 2, 63 George Street, Brisbane City QLD 4000",
+      "emailAddress": "",
+      "phone": "0734527226",
+      "type": "IN",
+      "city": 1
+    }
   }
 ]

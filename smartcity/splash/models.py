@@ -19,7 +19,8 @@ class Location(models.Model):
         ('ZO', 'Zoo'),
         ('MU', 'Musuem'),
         ('RE', 'Restaurant'),
-        ('MA', 'Mall')
+        ('MA', 'Mall'),
+        ('PA', 'Park')
     )
 
     id = models.AutoField(primary_key=True)
