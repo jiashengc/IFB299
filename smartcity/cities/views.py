@@ -17,3 +17,16 @@ def city(request, cityName):
     return render(request, 'cities/city.html', context = {
         "city": serializers.serialize('json', foundCity),
     })
+
+def locationType(request, cityName, locationType):
+    foundCity = [1]
+    foundCity[0] = models.City.objects.get(name=cityName)
+    pk = foundCity[0].pk
+
+    foundLocations = [100]
+    foundLocations[0] = models.Location.objects.get(city=pk)
+
+    return render(request, 'cities/locationType.html', context = {
+        "city": serializers.serialize('json', foundCity),
+        "locations": serializers.serialize('json', foundLocations),
+    })

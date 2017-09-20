@@ -1,0 +1,14 @@
+[
+  {
+    "pk": 1,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Brisbane Square Library",
+      "address": "Brisbane Square, 266 George St, Brisbane City QLD 4000",
+      "emailAddress": "",
+      "phone": "0734034166",
+      "type": "LI",
+      "city": 1
+    }
+  }
+]
