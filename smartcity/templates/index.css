@@ -1,0 +1,7 @@
+div.BrisbaneBackground{
+   width:100%;
+   height:100px;
+   background-image:url('BrisbanePicture.jpg');
+   margin:0;
+   padding:0;
+}
