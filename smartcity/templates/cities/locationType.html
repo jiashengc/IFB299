@@ -1,0 +1,99 @@
+{% extends 'navigation/nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+</head>
+
+<div class="splash">
+    <div class="container">
+        <h1 id="city-name"></h1>
+
+        <div class="row">
+            <div id="locations-container">
+                <!-- This is where all the locations will go to -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden cities div -->
+    <div class="location-container" style="opacity: 0">
+        <div class="location">
+            <h3 class="location-name"></h3>
+
+            <span>Address:</span>
+            <p class="location-address"></p>
+
+            <span>Email Address:</span>
+            <p class="location-emailAddress"></p>
+
+            <span>Phone:</span>
+            <p class="location-phone"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.cities = {{ city | safe }};
+    window.locations = {{ locations | safe }};
+
+    let city = cities[0].fields;
+    document.getElementById("city-name").innerHTML += city.name;
+
+    function returnType(code) {
+        let type = {
+            "CL": "Colleges",
+            "LI": "Libraries",
+            "IN": "Industries",
+            "HO": "Hotels",
+            "ZO": "Zoos",
+            "MU": "Museums",
+            "RE": "Restaurants",
+            "MA": "Malls",
+            "PA": "Parks"
+        };
+
+        return type[code];
+    }
+
+    let locationType = returnType(locations[0].fields.type);
+    document.getElementById("city-name").innerHTML += " " + locationType;
+
+    for (let i = 0; i < locations.length; i++) {
+        let locationContainer = document.getElementsByClassName('location-container')[0].cloneNode(true);
+        locationContainer.style.opacity = 1;
+
+        let location = locations[i].fields;
+        let name = location.name;
+        let address = location.address;
+        let emailAddress = location.emailAddress;
+        let phone = location.phone;
+
+        locationContainer.getElementsByClassName('location-name')[0].innerHTML = '<a href="' + locations[i].pk + '">' +  name + '</a>';
+        locationContainer.getElementsByClassName('location-address')[0].innerHTML = address;
+        locationContainer.getElementsByClassName('location-emailAddress')[0].innerHTML = emailAddress;
+        locationContainer.getElementsByClassName('location-phone')[0].innerHTML = phone;
+
+        document.getElementById('locations-container').innerHTML += locationContainer.innerHTML;
+    }
+
+
+
+</script>
+
+<style>
+    .location {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+</style>
+
+</html>
+
+{% endblock %}

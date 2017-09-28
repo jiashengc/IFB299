@@ -1,4 +1,5 @@
-
 ~$am Agreement.docx
-.idea/*
 *.pyc
+
+smartcity/.idea/
+smartcity/.idea/workspace.xml

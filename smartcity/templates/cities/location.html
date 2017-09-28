@@ -1,0 +1,86 @@
+{% extends 'navigation/nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+</head>
+
+<div class="splash">
+    <div class="container">
+        <div class="location-container">
+            <div class="location">
+                <h1 class="location-name"></h1>
+                <span class="location-type">Type: </span>
+
+                <h4>City:</h4>
+                <p class="location-city"></p>
+
+                <h4>Description:</h4>
+                <p class="location-description"></p>
+
+                <h4>Address:</h4>
+                <p class="location-address"></p>
+
+                <h4>Email Address:</h4>
+                <p class="location-emailAddress"></p>
+
+                <h4>Phone:</h4>
+                <p class="location-phone"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden cities div -->
+    <div class="city-container" style="opacity: 0">
+        <div class="city">
+            <h2 class="city-name"></h2>
+            <p class="city-description"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.city = {{ city | safe }};
+    window.locations = {{ location | safe }};
+
+    function returnType(code) {
+        let type = {
+            "CL": "Colleges",
+            "LI": "Libraries",
+            "IN": "Industries",
+            "HO": "Hotels",
+            "ZO": "Zoos",
+            "MU": "Museums",
+            "RE": "Restaurants",
+            "MA": "Malls",
+            "PA": "Parks"
+        };
+
+        return type[code];
+    }
+
+    let cityName = city[0].fields.name;
+    locations = locations[0].fields;
+    let locationName = locations.name;
+    let description = locations.description;
+    let address = locations.address;
+    let emailAddress = locations.emailAddress;
+    let phone = locations.phone;
+    let type = returnType(locations.type);
+
+    document.getElementsByClassName('location-name')[0].innerHTML = locationName;
+    document.getElementsByClassName('location-city')[0].innerHTML = '<a href="../../">' + cityName + '</a>';
+    document.getElementsByClassName('location-description')[0].innerHTML = description;
+    document.getElementsByClassName('location-address')[0].innerHTML = address;
+    document.getElementsByClassName('location-emailAddress')[0].innerHTML = emailAddress;
+    document.getElementsByClassName('location-phone')[0].innerHTML = phone;
+    document.getElementsByClassName('location-type')[0].innerHTML += '<a href="../">' + type + '</a>';
+</script>
+
+</html>
+
+{% endblock %}

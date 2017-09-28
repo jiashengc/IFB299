@@ -1,10 +1,18 @@
 .nav-link {
-    color: blue;
+    color: white;
     cursor: pointer;
+    margin-top: 5px;
+}
+
+.nav-link:hover {
+    color: #DAF5FF;
 }
 
 .navigation {
     z-index: 10;
-    background-color: white;
+    background-color: #3F3D40;
     height: 50px;
+    margin-bottom: 20px;
 }
+
+

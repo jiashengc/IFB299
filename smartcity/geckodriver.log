@@ -1,0 +1,72 @@
+1506579574166	geckodriver	INFO	geckodriver 0.19.0
+1506579574299	geckodriver	INFO	Listening on 127.0.0.1:61999
+1506579576031	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox 54\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Yensen\\AppData\\Local\\Temp\\rust_mozprofile.l2ye3cx5dHkV"
+1506579638922	geckodriver	INFO	geckodriver 0.19.0
+1506579638927	geckodriver	INFO	Listening on 127.0.0.1:62032
+1506579641016	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox 54\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Yensen\\AppData\\Local\\Temp\\rust_mozprofile.TkfdhqvnULln"
+1506579641275	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox%2054/omni.ja!/components/addonManager.js:65
+1506579641913	Marionette	INFO	Enabled via --marionette
+[GPU 2052] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1506579645559	Marionette	INFO	Listening on port 62038
+1506579645566	Marionette	INFO	Listening on port 62038
+1506579646314	Marionette	WARN	TLS certificate errors will be ignored for this session
+1506579646354	Marionette	DEBUG	loaded listener.js
+1506579646373	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1506579646384	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1506579646384	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1506579647243	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/"
+1506579647246	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/"
+1506579647383	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:8000/"
+1506579647393	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:8000/"
+1506579647393	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:8000/"
+1506579647438	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/"
+1506579647441	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/"
+1506579647484	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:8000/"
+1506579647528	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:8000/"
+1506579647530	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:8000/"
+1506579647606	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/register/"
+1506579647609	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/register/"
+1506579647785	Marionette	INFO	New connections will no longer be accepted
+1506579780026	geckodriver	INFO	geckodriver 0.19.0
+1506579780031	geckodriver	INFO	Listening on 127.0.0.1:62110
+1506579782123	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox 54\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Yensen\\AppData\\Local\\Temp\\rust_mozprofile.EpAIlp9qCCxe"
+1506579782478	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox%2054/omni.ja!/components/addonManager.js:65
+1506579783203	Marionette	INFO	Enabled via --marionette
+[GPU 6336] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1506579786197	Marionette	INFO	Listening on port 62116
+1506579786260	Marionette	WARN	TLS certificate errors will be ignored for this session
+1506579786273	Marionette	INFO	Listening on port 62116
+1506579786292	Marionette	DEBUG	loaded listener.js
+1506579786313	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1506579786326	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1506579786326	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1506579787301	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/"
+1506579787304	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/"
+1506579787424	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:8000/"
+1506579787436	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:8000/"
+1506579787436	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:8000/"
+1506579787493	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/"
+1506579787495	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/"
+1506579787535	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:8000/"
+1506579787592	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:8000/"
+1506579787592	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:8000/"
+1506579787669	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/register/"
+1506579787671	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/register/"
+1506579787925	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:8000/register/"
+1506579789127	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:8000/register/"
+1506579789128	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:8000/register/"
+1506579789182	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/"
+1506579789184	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/"
+1506579789214	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:8000/"
+1506579789412	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:8000/"
+1506579789412	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:8000/"
+1506579789461	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:8000/"
+1506579789463	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:8000/"
+1506579789468	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1506586597972	geckodriver	INFO	geckodriver 0.19.0
+1506586597978	geckodriver	INFO	Listening on 127.0.0.1:63348
+1506586600041	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox selenium\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Yensen\\AppData\\Local\\Temp\\rust_mozprofile.DVTMJkfNlzbu"
+1506586602749	Marionette	INFO	Listening on port 63355
+1506586603171	Marionette	WARN	TLS certificate errors will be ignored for this session
+1506586606294	Marionette	INFO	New connections will no longer be accepted
