@@ -18,6 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from splash import views as splashviews
+from django.contrib import auth
 
 urlpatterns = [
     url(r'^$', splashviews.index, name = 'index'),
@@ -26,4 +27,6 @@ urlpatterns = [
     url(r'^hotel/', include('hotel.urls')),
     url(r'^register/', include('register.urls')),
     url(r'^cities/', include('cities.urls')),
+    url(r'^logout/$', include('logout.urls'),{'next_page': splashviews.index})
+
 ]
