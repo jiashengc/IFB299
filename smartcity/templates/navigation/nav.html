@@ -7,7 +7,10 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
           crossorigin="anonymous">
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
     <link rel="stylesheet" href="{% static 'nav.css' %}" type="text/css">
+
 
 </head>
 
@@ -17,6 +20,9 @@
         <ul class="nav">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cities' %}">Cities</a>
             </li>
             {% if user.is_authenticated %}
                 <li class="nav-item">

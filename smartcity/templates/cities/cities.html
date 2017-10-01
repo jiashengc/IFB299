@@ -6,7 +6,7 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="{% static 'cities.css' %}" type="text/css">
 </head>
 
 <div class="splash">
@@ -38,7 +38,7 @@
         let name = city.name;
         let description = city.description;
 
-        cityContainer.getElementsByClassName('city-name')[0].innerHTML = '<a href="' + name + '">' + name + '</a>';
+        cityContainer.getElementsByClassName('city-name')[0].innerHTML = '<a href="' + name + '" class="hvr-underline-from-center">' + name + '</a>';
         cityContainer.getElementsByClassName('city-description')[0].innerHTML = description;
 
         document.getElementById('cities-container').innerHTML += cityContainer.innerHTML;
