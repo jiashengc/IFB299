@@ -64,10 +64,62 @@
              let key = t;
              let value = type[t];
 
-             document.getElementById('location-types').innerHTML += '<a href="' + key + '">' + value + '</a><br>';
+             document.getElementById('location-types').innerHTML += '<a href="' + key + '" class="hvr-underline-from-center">' + value + '</a><br>';
         }
 }
 </script>
+
+<style>
+    #location-types a {
+        color: #3F3D40; /*color of your choosing*/
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+    #cities-container {
+        margin-top: 100px;
+    }
+
+    .city h2 {
+        font-size: 76px;
+        text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+    }
+
+    .city p {
+        display: inline-block;
+        font-size: 20px;
+        background: rgba(255,255,255,0.55);
+        padding: 15px;
+    }
+
+    #location-types {
+        display: flex;
+        background:rgba(255,255,255, 0.65);
+        margin: 15px;
+    }
+
+    #location-types a {
+        font-size: 18px;
+        font-weight: bold;
+        color: #3F3D40;
+        padding: 15px;
+    }
+
+    .splash {
+        z-index: 1;
+        background: url("/static/images/brisbane_overview.jpg");
+        background-size: cover;
+        position: fixed;
+        top: 50px;
+        right: 0; bottom: 0; left: 0;
+    }
+
+    .hvr-underline-from-center:before {
+        background: #3F3D40;
+        border-radius: 3px;
+        height: 3px;
+    }
+</style>
 
 </html>
 
