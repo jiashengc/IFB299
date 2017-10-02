@@ -15,4 +15,8 @@
     margin-bottom: 20px;
 }
 
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):hover{
+    color: white;
+}
 
