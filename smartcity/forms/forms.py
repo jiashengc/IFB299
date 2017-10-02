@@ -10,13 +10,11 @@ class RegisterForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
 
-    ADMIN = 'Admin'
     STUDENT = 'Student'
     TOURIST = 'Tourist'
     BUSINESSMAN = 'Businessman'
 
     ACCOUNTTYPE = (
-        (ADMIN, 'Admin'),
         (STUDENT, 'Student'),
         (TOURIST, 'Tourist'),
         (BUSINESSMAN, 'Businessman')

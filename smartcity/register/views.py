@@ -11,7 +11,8 @@ def register(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()
-            user.birth_date = form.cleaned_data.get('birth_date')
+            user.profile.birth_date = form.cleaned_data.get('birthDate')
+            user.profile.account_type = form.cleaned_data.get('accountType')
             user.first_name = form.cleaned_data.get('first_name')
             user.last_name = form.cleaned_data.get('last_name')
             user.save()

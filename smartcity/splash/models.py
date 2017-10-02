@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class City(models.Model):
     id = models.AutoField(primary_key=True)
@@ -7,7 +10,6 @@ class City(models.Model):
 
     def __unicode__(self):
         return self.name
-
 
 class Location(models.Model):
 
@@ -35,3 +37,26 @@ class Location(models.Model):
 
     def __unicode__(self):
         return self.name
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birth_date = models.DateField(null=True, blank=True)
+
+    STUDENT = 'Student'
+    TOURIST = 'Tourist'
+    BUSINESSMAN = 'Businessman'
+
+    ACCOUNTTYPE = (
+        (STUDENT, 'Student'),
+        (TOURIST, 'Tourist'),
+        (BUSINESSMAN, 'Businessman')
+    )
+
+    account_type = models.CharField(max_length=30)
+
+
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()
