@@ -24,7 +24,6 @@ def city(request, cityName):
 
     return render(request, 'cities/city.html', context = {
         "city": serializers.serialize('json', foundCity),
-        "user": serializers.serialize('json', [request.user]),
     })
 
 def locationType(request, cityName, locationType):
