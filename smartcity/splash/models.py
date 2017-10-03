@@ -11,6 +11,9 @@ class City(models.Model):
     def __unicode__(self):
         return self.name
 
+    def __str__(self):
+        return self.name
+
 class Location(models.Model):
 
     TYPE = (
@@ -36,6 +39,9 @@ class Location(models.Model):
 
 
     def __unicode__(self):
+        return self.name
+
+    def __str__(self):
         return self.name
 
 class Profile(models.Model):
