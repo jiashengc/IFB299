@@ -1,24 +1,21 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
-class Regtest(unittest.TestCase):
+
+class Regtest(StaticLiveServerTestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
-        self.base_url = "http://127.0.0.1:8000/"
         self.verificationErrors = []
         self.accept_next_alert = True
 
     def test_reg(self):
         driver = self.driver
-        driver.get("http://127.0.0.1:8000")
-        driver.find_element_by_link_text("Home").click()
+        driver.get(self.live_server_url)
         driver.find_element_by_link_text("Register").click()
         driver.find_element_by_id("id_username").clear()
         driver.find_element_by_id("id_username").send_keys("user")
@@ -35,7 +32,6 @@ class Regtest(unittest.TestCase):
         driver.find_element_by_id("id_password2").send_keys("Password123")
         driver.find_element_by_css_selector("button[type=\"submit\"]").click()
         driver.find_element_by_link_text("Log Out").click()
-
 
     def is_element_present(self, how, what):
         try:
