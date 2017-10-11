@@ -32,6 +32,10 @@
                 <p class="location-phone"></p>
             </div>
         </div>
+
+        <div id="map">
+
+        </div>
     </div>
 
     <!-- Hidden cities div -->
@@ -42,6 +46,13 @@
         </div>
     </div>
 </div>
+
+<style>
+    #map {
+        height: 500px;
+        width: 650px;
+    }
+</style>
 
 <script>
     window.city = {{ city | safe }};
@@ -79,8 +90,40 @@
     document.getElementsByClassName('location-emailAddress')[0].innerHTML = emailAddress;
     document.getElementsByClassName('location-phone')[0].innerHTML = phone;
     document.getElementsByClassName('location-type')[0].innerHTML += '<a href="../">' + type + '</a>';
-</script>
 
+    // Google Maps API
+    let map;
+    let marker;
+
+    function initMap() {
+        let geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            'address': locationName
+        }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                let Lat = results[0].geometry.location.lat();
+                let Lng = results[0].geometry.location.lng();
+                let pos = new google.maps.LatLng(Lat, Lng);
+
+                let mapOptions = {
+                    zoom: 14,
+                    center: pos
+                }
+
+                let markerOptions = {
+                    position: pos,
+                    map: map,
+                    title: locationName
+                }
+
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                marker = new google.maps.Marker(markerOptions);
+                marker.setMap(map);
+            }
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs_zto9p7ZEgsWV9UNm4NgTq35GdV7STA&callback=initMap" async defer></script>
 </html>
 
 {% endblock %}

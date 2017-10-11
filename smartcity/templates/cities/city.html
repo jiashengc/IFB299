@@ -20,6 +20,10 @@
 
             </div>
         </div>
+
+        <div id="map">
+
+        </div>
     </div>
 
     <!-- Hidden cities div -->
@@ -31,45 +35,12 @@
     </div>
 </div>
 
-<script>
-    window.cities = {{ city | safe }};
-
-    let city = cities[0].fields;
-
-    let cityContainer = document.getElementsByClassName('city-container')[0].cloneNode(true);
-    cityContainer.style.opacity = 1;
-
-    let name = city.name;
-    let description = city.description;
-
-    cityContainer.getElementsByClassName('city-name')[0].innerHTML = name;
-    cityContainer.getElementsByClassName('city-description')[0].innerHTML = description;
-
-    document.getElementById('cities-container').innerHTML += cityContainer.innerHTML;
-
-    let type = {
-            "CL": "Colleges",
-            "LI": "Libraries",
-            "IN": "Industries",
-            "HO": "Hotels",
-            "ZO": "Zoos",
-            "MU": "Museums",
-            "RE": "Restaurants",
-            "MA": "Malls",
-            "PA": "Parks"
-    };
-
-    for (let t in type){
-        if (type.hasOwnProperty(t)) {
-             let key = t;
-             let value = type[t];
-
-             document.getElementById('location-types').innerHTML += '<a href="' + key + '" class="hvr-underline-from-center">' + value + '</a><br>';
-        }
-}
-</script>
-
 <style>
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+
     #location-types a {
         color: #3F3D40; /*color of your choosing*/
         text-decoration: none;
@@ -109,7 +80,6 @@
         z-index: 1;
         background: url("/static/images/brisbane_overview.jpg");
         background-size: cover;
-        position: fixed;
         top: 50px;
         right: 0; bottom: 0; left: 0;
     }
@@ -120,6 +90,68 @@
         height: 3px;
     }
 </style>
+
+<script>
+    window.cities = {{ city | safe }};
+
+    let city = cities[0].fields;
+
+    let cityContainer = document.getElementsByClassName('city-container')[0].cloneNode(true);
+    cityContainer.style.opacity = 1;
+
+    let name = city.name;
+    let description = city.description;
+
+    cityContainer.getElementsByClassName('city-name')[0].innerHTML = name;
+    cityContainer.getElementsByClassName('city-description')[0].innerHTML = description;
+
+    document.getElementById('cities-container').innerHTML += cityContainer.innerHTML;
+
+    let type = {
+            "CL": "Colleges",
+            "LI": "Libraries",
+            "IN": "Industries",
+            "HO": "Hotels",
+            "ZO": "Zoos",
+            "MU": "Museums",
+            "RE": "Restaurants",
+            "MA": "Malls",
+            "PA": "Parks"
+    };
+
+    for (let t in type){
+        if (type.hasOwnProperty(t)) {
+             let key = t;
+             let value = type[t];
+
+             document.getElementById('location-types').innerHTML += '<a href="' + key + '" class="hvr-underline-from-center">' + value + '</a><br>';
+        }
+    }
+
+    // Google Maps API
+    let map;
+
+    function initMap() {
+        let geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            'address': name
+        }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                let Lat = results[0].geometry.location.lat();
+                let Lng = results[0].geometry.location.lng();
+                let pos = new google.maps.LatLng(Lat, Lng);
+
+                let mapOptions = {
+                    zoom: 12,
+                    center: pos
+                }
+
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            }
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs_zto9p7ZEgsWV9UNm4NgTq35GdV7STA&callback=initMap" async defer></script>
 
 </html>
 
