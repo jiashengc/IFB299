@@ -130,7 +130,6 @@
 
     // Google Maps API
     let map;
-    let marker;
 
     function initMap() {
         let geocoder = new google.maps.Geocoder();
@@ -143,7 +142,7 @@
                 let pos = new google.maps.LatLng(Lat, Lng);
 
                 let mapOptions = {
-                    zoom: 8,
+                    zoom: 12,
                     center: pos
                 }
 
