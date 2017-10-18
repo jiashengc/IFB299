@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
 class City(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, unique=True)
@@ -42,7 +43,8 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
 class Events(models.Model):
     TYPE = (('LM', 'Live Music'),
             ('SP', 'Sports'))
@@ -60,7 +62,8 @@ class Events(models.Model):
         return self.name
 
     def __str__(self):
-        return self.name    
+        return self.name
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -76,7 +79,7 @@ class Profile(models.Model):
         (BUSINESSMAN, 'Businessman')
     )
 
-    account_type = models.CharField(max_length=30)
+    account_type = models.CharField(max_length=30, choices=ACCOUNTTYPE)
 
 
 @receiver(post_save, sender=User)

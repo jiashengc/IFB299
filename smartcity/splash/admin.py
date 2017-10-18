@@ -3,22 +3,22 @@ from .models import Location
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from .models import Profile
-
 # Register your models here.
 
-class locationAdmin(admin.ModelAdmin):
-	list_display = (
-		'name',
-		'type',
-		'address'
-	)
 
-	list_filter = (
-		'type',
-		'city'
-	)
+class LocationAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'type',
+        'address'
+    )
 
-admin.site.register(Location, locationAdmin)
+    list_filter = (
+        'type',
+        'city'
+    )
+
+admin.site.register(Location, LocationAdmin)
 
 
 class ProfileInline(admin.StackedInline):
@@ -39,3 +39,5 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
+
+
