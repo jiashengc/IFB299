@@ -63,6 +63,17 @@ def location(request, cityName, locationType, location):
         "location": serializers.serialize('json', foundLocation)
     })
 
+def compareLocations(request):
+
+    cities = models.City.objects.all()
+    locations = models.Location.objects.all()
+
+    return render(request, 'compare_location/compare.html', context = {
+        "cities": serializers.serialize('json', cities),
+        "locations": serializers.serialize('json', locations),
+    })
+
+
 def checkPermission(locationType, accountType):
     if accountType == 'Student':
         return locationType == 'CL'\
