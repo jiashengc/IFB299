@@ -11,16 +11,30 @@
     <div class="container-fluid">
         <div class="row location-compare">
 
-            <div class="col-6">
-                <select class="form-control location-chooser" id="left-chooser">
+            <div class="col-6 location-column">
+                <select class="form-control location-chooser" id="left-chooser" onchange="changeLocation(0)">
                     <option disabled selected value> -- select an option -- </option>
                 </select>
+                <h2 class="name"></h2>
+                <h5 class="type"></h5>
+
+                <span>City:</span>
+                <h3 class="city"></h3>
+                <span>Description:</span>
+                <p class="desc"></p>
             </div>
 
-            <div class="col-6">
-                <select class="form-control location-chooser" id="right-chooser">
+            <div class="col-6 location-column">
+                <select class="form-control location-chooser" id="right-chooser" onchange="changeLocation(1)">
                     <option disabled selected value> -- select an option -- </option>
                 </select>
+                <h2 class="name"></h2>
+                <h5 class="type"></h5>
+
+                <span>City:</span>
+                <h3 class="city"></h3>
+                <span>Description:</span>
+                <p class="desc"></p>
             </div>
 
         </div>
@@ -44,7 +58,8 @@
 
     optionString = "";
     for (let i = 0; i < locations.length; i++) {
-        optionString += "<option value=" + locations[i].pk + ">" + locations[i].fields.name + "</option>";
+        locations[i].fields.city -= 1;
+        optionString += "<option value=" + (locations[i].pk - 1) + ">" + locations[i].fields.name + "</option>";
     }
 
     let choosers = document.getElementsByClassName("location-chooser");
@@ -52,6 +67,45 @@
         choosers[i].innerHTML += optionString;
     }
 
+    const changeLocation = function(val) {
+        let selectorContainer = choosers[val];
+        let compareContainer = document.getElementsByClassName("location-column")[val];
+
+        let selectedValue = selectorContainer.options[selectorContainer.selectedIndex].value;
+
+        let nameDiv = compareContainer.getElementsByClassName("name")[0];
+        let typeDiv = compareContainer.getElementsByClassName("type")[0];
+        let cityDiv = compareContainer.getElementsByClassName("city")[0];
+        let descDiv = compareContainer.getElementsByClassName("desc")[0];
+
+        let curLoc = locations[val];
+        let name = curLoc.fields.name;
+        let type = returnType(curLoc.fields.type);
+        let city = cities[curLoc.fields.city].fields.name;
+        let desc = curLoc.fields.description;
+
+        // Append the data
+        nameDiv.innerHTML = name;
+        typeDiv.innerHTML = type;
+        cityDiv.innerHTML = city;
+        descDiv.innerHTML = desc;
+    }
+
+    const returnType = function(code) {
+        let type = {
+            "CL": "Colleges",
+            "LI": "Libraries",
+            "IN": "Industries",
+            "HO": "Hotels",
+            "ZO": "Zoos",
+            "MU": "Museums",
+            "RE": "Restaurants",
+            "MA": "Malls",
+            "PA": "Parks"
+        };
+
+        return type[code];
+    }
 </script>
 </html>
 {% endblock %}
