@@ -1,14 +1,25 @@
-<!DOCTYPE html>
+{% extends 'navigation/nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
 <head>
 
 </head>
 <body>
-
+    Test
 </body>
 <style>
 
 </style>
 <script>
-    windows.cities = {{ cities | safe}};
+    window.cities = {{ cities | safe}};
     window.locations = {{ locations | safe }};
+
+    for (let i = 0; i < locations.length; i++) {
+        locations[i].fields.city -= 1;
+    }
 </script>
+</html>
+{% endblock %}
