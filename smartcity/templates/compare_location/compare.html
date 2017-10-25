@@ -8,18 +8,50 @@
 
 </head>
 <body>
-    Test
+    <div class="container-fluid">
+        <div class="row location-compare">
+
+            <div class="col-6">
+                <select class="form-control location-chooser" id="left-chooser">
+                    <option disabled selected value> -- select an option -- </option>
+                </select>
+            </div>
+
+            <div class="col-6">
+                <select class="form-control location-chooser" id="right-chooser">
+                    <option disabled selected value> -- select an option -- </option>
+                </select>
+            </div>
+
+        </div>
+    </div>
 </body>
 <style>
+    .location-compare {
+        margin-top: 50px;
+    }
 
+    .location-chooser {
+        width: 50%;
+        min-width: 200px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
 </style>
 <script>
     window.cities = {{ cities | safe}};
     window.locations = {{ locations | safe }};
 
+    optionString = "";
     for (let i = 0; i < locations.length; i++) {
-        locations[i].fields.city -= 1;
+        optionString += "<option value=" + locations[i].pk + ">" + locations[i].fields.name + "</option>";
     }
+
+    let choosers = document.getElementsByClassName("location-chooser");
+    for (let i = 0; i < choosers.length; i++) {
+        choosers[i].innerHTML += optionString;
+    }
+
 </script>
 </html>
 {% endblock %}
