@@ -3,22 +3,22 @@ from .models import Location
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from .models import Profile
+from .models import Event
 # Register your models here.
 
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = (
-        'name',
-        'type',
-        'address'
-    )
+    list_display = ('name','type','address')
+    list_filter = ('type','city')
 
-    list_filter = (
-        'type',
-        'city'
-    )
+
+class EventsAdmin(admin.ModelAdmin):
+    list_display = ('name','type','address','date_time')
+    list_filter = ('type','city')
+
 
 admin.site.register(Location, LocationAdmin)
+admin.site.register(Event, EventsAdmin)
 
 
 class ProfileInline(admin.StackedInline):
