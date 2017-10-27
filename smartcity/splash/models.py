@@ -45,7 +45,7 @@ class Location(models.Model):
         return self.name
 
 
-class Events(models.Model):
+class Event(models.Model):
     TYPE = (('LM', 'Live Music'),
             ('SP', 'Sports'))
 
