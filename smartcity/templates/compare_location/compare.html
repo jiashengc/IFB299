@@ -11,9 +11,15 @@
     <div class="container-fluid">
         <div class="row location-compare">
 
+            <div class="col-12">
+                <select class="form-control type-chooser" id="type-chooser" onchange="changeType()">
+                    <option disabled selected value=-1> -- select a location type -- </option>
+                </select>
+            </div>
+
             <div class="col-6 location-column">
                 <select class="form-control location-chooser" id="left-chooser" onchange="changeLocation(0)">
-                    <option disabled selected value> -- select an option -- </option>
+                    <option disabled selected value> -- select a location -- </option>
                 </select>
                 <h2 class="name"></h2>
                 <h5 class="type"></h5>
@@ -51,12 +57,34 @@
         max-width: 450px;
         margin: 0 auto;
     }
+
+    .type-chooser {
+        width: 30%;
+        min-width: 150px;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
 </style>
 <script>
     window.cities = {{ cities | safe}};
     window.locations = {{ locations | safe }};
 
-    optionString = "";
+    let type = {
+            "CL": "Colleges",
+            "LI": "Libraries",
+            "IN": "Industries",
+            "HO": "Hotels",
+            "ZO": "Zoos",
+            "MU": "Museums",
+            "RE": "Restaurants",
+            "MA": "Malls",
+            "PA": "Parks"
+        };
+
+    let defaultOption = "<option disabled selected value=-1> -- select a location -- </option>";
+
+    let optionString = "";
     for (let i = 0; i < locations.length; i++) {
         locations[i].fields.city -= 1;
         optionString += "<option value=" + (locations[i].pk - 1) + ">" + locations[i].fields.name + "</option>";
@@ -65,6 +93,13 @@
     let choosers = document.getElementsByClassName("location-chooser");
     for (let i = 0; i < choosers.length; i++) {
         choosers[i].innerHTML += optionString;
+    }
+
+    let typeChooser = document.getElementsByClassName("type-chooser")[0];
+    for (let key in type) {
+        if (type.hasOwnProperty(key)) {
+            typeChooser.innerHTML += "<option value='" + key + "'>" + type[key] + "</option>";
+        }
     }
 
     const changeLocation = function(val) {
@@ -92,18 +127,6 @@
     }
 
     const returnType = function(code) {
-        let type = {
-            "CL": "Colleges",
-            "LI": "Libraries",
-            "IN": "Industries",
-            "HO": "Hotels",
-            "ZO": "Zoos",
-            "MU": "Museums",
-            "RE": "Restaurants",
-            "MA": "Malls",
-            "PA": "Parks"
-        };
-
         return type[code];
     }
 </script>
