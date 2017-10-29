@@ -80,19 +80,14 @@
             "RE": "Restaurants",
             "MA": "Malls",
             "PA": "Parks"
-        };
-
-    let defaultOption = "<option disabled selected value=-1> -- select a location -- </option>";
-
-    let optionString = "";
-    for (let i = 0; i < locations.length; i++) {
-        locations[i].fields.city -= 1;
-        optionString += "<option value=" + (locations[i].pk - 1) + ">" + locations[i].fields.name + "</option>";
-    }
+    };
+    let currentType = "NO"
 
     let choosers = document.getElementsByClassName("location-chooser");
-    for (let i = 0; i < choosers.length; i++) {
-        choosers[i].innerHTML += optionString;
+    let defaultOption = "<option disabled selected value=-1> -- select a location -- </option>";
+
+    for (let i = 0; i < locations.length; i++) {
+        locations[i].fields.city -= 1;
     }
 
     let typeChooser = document.getElementsByClassName("type-chooser")[0];
@@ -124,6 +119,23 @@
         typeDiv.innerHTML = type;
         cityDiv.innerHTML = city;
         descDiv.innerHTML = desc;
+    }
+
+    const changeType = function() {
+
+        let selectedType = typeChooser.value;
+
+        let optionString = "<option disabled selected value=-1> -- select a location -- </option>";
+        for (let i = 0; i < locations.length; i++) {
+            if (locations[i].fields.type != selectedType) {
+                continue;
+            }
+            optionString += "<option value=" + (locations[i].pk - 1) + ">" + locations[i].fields.name + "</option>";
+        }
+
+        for (let i = 0; i < choosers.length; i++) {
+            choosers[i].innerHTML = optionString;
+        }
     }
 
     const returnType = function(code) {
