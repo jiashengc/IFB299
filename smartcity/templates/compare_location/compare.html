@@ -136,6 +136,20 @@
         for (let i = 0; i < choosers.length; i++) {
             choosers[i].innerHTML = optionString;
         }
+
+        reset();
+    }
+
+    const reset = function() {
+        for (let i = 0; i < choosers.length; i++) {
+            let compareContainer = document.getElementsByClassName("location-column")[i];
+            compareContainer.getElementsByClassName("name")[0].innerHTML = "";
+            compareContainer.getElementsByClassName("type")[0].innerHTML = "";
+            compareContainer.getElementsByClassName("city")[0].innerHTML = "";
+            compareContainer.getElementsByClassName("desc")[0].innerHTML = "";
+        }
+
+
     }
 
     const returnType = function(code) {
