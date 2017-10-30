@@ -68,6 +68,7 @@ class Event(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField(null=True, blank=True)
+    temporary_access = models.BooleanField(default=False)
 
     STUDENT = 'Student'
     TOURIST = 'Tourist'

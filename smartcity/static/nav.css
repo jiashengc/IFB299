@@ -20,3 +20,24 @@ a:not([href]):not([tabindex]):hover{
     color: white;
 }
 
+.toggle {
+    margin-top: 5px;
+    border: 1px white solid;
+    border-radius: 4px;
+}
+
+.toggle-handle {
+    border: 1px lightgray solid;
+    background-color: white;
+}
+
+.toggle-off {
+    color: white;
+    background-color: crimson;
+}
+
+.btn-access {
+    margin-top: 5px;
+    margin-left: 15px;
+    height: 40px;
+}
