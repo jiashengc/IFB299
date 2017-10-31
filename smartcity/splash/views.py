@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import HttpResponseRedirect
-from spash import models
+from splash import models
 
 # Create your views here.
 def index(request):
