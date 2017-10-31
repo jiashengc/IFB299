@@ -11,38 +11,57 @@
     <div class="container-fluid">
         <div class="row location-compare">
 
-            <div class="col-6 location-column">
-                <select class="form-control location-chooser" id="left-chooser" onchange="changeLocation(0)">
-                    <option disabled selected value> -- select an option -- </option>
+            <div class="col-12">
+                <select class="form-control type-chooser" id="type-chooser" onchange="changeType()">
+                    <option disabled selected value=-1> -- select a location type -- </option>
                 </select>
-                <h2 class="name"></h2>
-                <h5 class="type"></h5>
-
-                <span>City:</span>
-                <h3 class="city"></h3>
-                <span>Description:</span>
-                <p class="desc"></p>
             </div>
 
-            <div class="col-6 location-column">
+            <div class="col-5 location-column">
+                <select class="form-control location-chooser" id="left-chooser" onchange="changeLocation(0)">
+                    <option disabled selected value> -- select a location -- </option>
+                </select>
+                <div class="details">
+                    <h2 class="name"></h2>
+                    <h5 class="type"></h5>
+
+                    <span>City:</span>
+                    <h3 class="city"></h3>
+                    <span>Description:</span>
+                    <p class="desc"></p>
+                </div>
+            </div>
+
+            <div class="col-1"></div>
+
+            <div class="col-5 location-column">
                 <select class="form-control location-chooser" id="right-chooser" onchange="changeLocation(1)">
                     <option disabled selected value> -- select an option -- </option>
                 </select>
-                <h2 class="name"></h2>
-                <h5 class="type"></h5>
+                <div class="details">
+                    <h2 class="name"></h2>
+                    <h5 class="type"></h5>
 
-                <span>City:</span>
-                <h3 class="city"></h3>
-                <span>Description:</span>
-                <p class="desc"></p>
+                    <span>City:</span>
+                    <h3 class="city"></h3>
+                    <span>Description:</span>
+                    <p class="desc"></p>
+                </div>
             </div>
 
         </div>
     </div>
 </body>
 <style>
+    .container-fluid {
+        background-image: url("/static/images/compareLocation.jpg");
+        background-size: cover;
+        background-position: center center;
+        min-height: 100vh;
+    }
+
     .location-compare {
-        margin-top: 50px;
+        padding-top: 50px;
     }
 
     .location-chooser {
@@ -51,20 +70,60 @@
         max-width: 450px;
         margin: 0 auto;
     }
+
+    .type-chooser {
+        width: 30%;
+        min-width: 150px;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    .location-column {
+        padding: 35px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: lavender;
+        box-shadow: 2px 2px 3px black;
+    }
+
+    .details {
+        margin: 10px;
+    }
+
+    .details .name {
+        margin-top: 20px;
+    }
 </style>
 <script>
     window.cities = {{ cities | safe}};
     window.locations = {{ locations | safe }};
 
-    optionString = "";
-    for (let i = 0; i < locations.length; i++) {
-        locations[i].fields.city -= 1;
-        optionString += "<option value=" + (locations[i].pk - 1) + ">" + locations[i].fields.name + "</option>";
-    }
+    let type = {
+            "CL": "Colleges",
+            "LI": "Libraries",
+            "IN": "Industries",
+            "HO": "Hotels",
+            "ZO": "Zoos",
+            "MU": "Museums",
+            "RE": "Restaurants",
+            "MA": "Malls",
+            "PA": "Parks"
+    };
+    let currentType = "NO"
 
     let choosers = document.getElementsByClassName("location-chooser");
-    for (let i = 0; i < choosers.length; i++) {
-        choosers[i].innerHTML += optionString;
+    let defaultOption = "<option disabled selected value=-1> -- select a location -- </option>";
+
+    for (let i = 0; i < locations.length; i++) {
+        locations[i].fields.city -= 1;
+    }
+
+    let typeChooser = document.getElementsByClassName("type-chooser")[0];
+    for (let key in type) {
+        if (type.hasOwnProperty(key)) {
+            typeChooser.innerHTML += "<option value='" + key + "'>" + type[key] + "</option>";
+        }
     }
 
     const changeLocation = function(val) {
@@ -91,19 +150,38 @@
         descDiv.innerHTML = desc;
     }
 
-    const returnType = function(code) {
-        let type = {
-            "CL": "Colleges",
-            "LI": "Libraries",
-            "IN": "Industries",
-            "HO": "Hotels",
-            "ZO": "Zoos",
-            "MU": "Museums",
-            "RE": "Restaurants",
-            "MA": "Malls",
-            "PA": "Parks"
-        };
+    const changeType = function() {
 
+        let selectedType = typeChooser.value;
+
+        let optionString = "<option disabled selected value=-1> -- select a location -- </option>";
+        for (let i = 0; i < locations.length; i++) {
+            if (locations[i].fields.type != selectedType) {
+                continue;
+            }
+            optionString += "<option value=" + (locations[i].pk - 1) + ">" + locations[i].fields.name + "</option>";
+        }
+
+        for (let i = 0; i < choosers.length; i++) {
+            choosers[i].innerHTML = optionString;
+        }
+
+        reset();
+    }
+
+    const reset = function() {
+        for (let i = 0; i < choosers.length; i++) {
+            let compareContainer = document.getElementsByClassName("location-column")[i];
+            compareContainer.getElementsByClassName("name")[0].innerHTML = "";
+            compareContainer.getElementsByClassName("type")[0].innerHTML = "";
+            compareContainer.getElementsByClassName("city")[0].innerHTML = "";
+            compareContainer.getElementsByClassName("desc")[0].innerHTML = "";
+        }
+
+
+    }
+
+    const returnType = function(code) {
         return type[code];
     }
 </script>

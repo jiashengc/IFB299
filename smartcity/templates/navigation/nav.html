@@ -9,6 +9,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'nav.css' %}" type="text/css">
 
 
@@ -23,6 +24,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'cities' %}">Cities</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'compare-locations' %}">Compare Locations</a>
             </li>
             {% if user.is_authenticated %}
                 <li class="nav-item">
@@ -42,6 +46,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/admin">Admin</a>
             </li>
+            <form id="access" action="{% url 'change-access' %}" method="post">
+                <li class="nav-item">
+                    <input class="access-checkbox" type="checkbox" data-toggle="toggle" formaction="">
+                </li>
+            </form>
+            <button type="submit" class="btn btn-primary btn-access" form="access">Submit</button>
         </ul>
     </div>
 
@@ -56,3 +66,12 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<script>
+{% if user.profile.temporary_access %}
+    $('.access-checkbox').bootstrapToggle('on');
+{% else %}
+    $('.access-checkbox').bootstrapToggle('off');
+{% endif %}
+</script>

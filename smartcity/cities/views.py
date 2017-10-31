@@ -87,3 +87,4 @@ def checkPermission(locationType, accountType):
             or locationType != 'HO'
 
     return True
+

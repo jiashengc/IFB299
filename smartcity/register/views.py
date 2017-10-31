@@ -15,6 +15,7 @@ def register(request):
             user.profile.account_type = form.cleaned_data.get('accountType')
             user.first_name = form.cleaned_data.get('first_name')
             user.last_name = form.cleaned_data.get('last_name')
+            user.profile.temporary_access = False
             user.save()
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)

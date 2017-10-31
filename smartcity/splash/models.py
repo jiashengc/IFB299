@@ -68,10 +68,14 @@ class Event(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField(null=True, blank=True)
+<<<<<<< HEAD
     
     email = models.EmailField(max_length=254)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+=======
+    temporary_access = models.BooleanField(default=False)
+>>>>>>> 9a09361e5d77a3ee9797d67d3ac07e4dd99c5808
 
     STUDENT = 'Student'
     TOURIST = 'Tourist'
