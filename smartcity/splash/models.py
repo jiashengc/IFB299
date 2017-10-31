@@ -46,15 +46,15 @@ class Location(models.Model):
 
 
 class Event(models.Model):
-    TYPE = (('LM', 'Live Music'),
-            ('SP', 'Sports'))
+    TYPE = (('Live Music', 'Live Music'),
+            ('Sports', 'Sports'))
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, unique=True)
     address = models.CharField(max_length=256)
     date_time = models.DateTimeField(null=True, blank=True)
-    ticket_link = models.CharField(max_length=14, unique=True)
-    type = models.CharField(max_length=2, choices=TYPE)
+    ticket_link = models.CharField(max_length=256, unique=True)
+    type = models.CharField(max_length=128, choices=TYPE)
     description = models.CharField(max_length=1080)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
 
@@ -63,6 +63,7 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
 
 
 class Profile(models.Model):

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
+from splash import models
 
 # Create your views here.
 def index(request):
@@ -32,4 +33,9 @@ def changeAccess(request):
 
     request.session.modified = True
 
-    return HttpResponseRedirect('/cities')
+    return HttpResponseRedirect('/')
+
+def event(request):
+    event_list = models.Event.objects.order_by('date_time')[:10]
+    context = {'event_list': event_list}
+    return render(request, 'events/events.html', context)

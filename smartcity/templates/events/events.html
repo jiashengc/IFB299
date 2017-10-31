@@ -1,0 +1,38 @@
+{% extends 'navigation/nav.html' %}
+
+{% block content %}
+{% load static %}
+
+{% if event_list %}
+    <ul><HR><h1>Events</h1>
+    {% for event in event_list %}
+
+        <HR><div class="col-md-10">
+            <h2>{{event.name}}</h2>
+            <b>{{event.city}} / {{event.type}}</b>
+            <p>{{event.description}}</p>
+            <i>Address: {{event.address}}</i><br/>
+            <b>Date and time: {{event.date_time}}</b><br/><br/>
+            <a href={{event.ticket_link}} class="btn btn-secondary">Buy Ticket</a>
+        </div></HR>
+
+
+    {% endfor %}
+    <HR></ul>
+{% else %}
+    <p>No events are available.</p>
+{% endif %}
+{% endblock %}
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

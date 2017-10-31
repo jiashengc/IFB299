@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^profile/', include('profile.urls')),
     url(r'^logout/', include('logout.urls')),
     url(r'^change-access/', splashviews.changeAccess, name='change-access'),
+    url(r'^events/', splashviews.event, name='events'),
 ]
