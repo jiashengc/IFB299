@@ -6,6 +6,10 @@ from splash import models
 
 # Create your views here.
 def index(request):
+    if 'access' not in request.session:
+        request.session['access'] = 0
+    request.session.modified = True
+
     return render(request, 'index.html')
 
 def changeAccess(request):
