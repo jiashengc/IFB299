@@ -17,3 +17,8 @@ def changeAccess(request):
         request.user.profile.temporary_access = True
 
     return HttpResponseRedirect('/')
+
+def event(request):
+    event_list = models.Event.objects.order_by('date_time')[:10]
+    context = {'event_list': event_list}
+    return render(request, 'events/events.html', context)
