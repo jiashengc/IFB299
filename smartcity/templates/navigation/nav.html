@@ -50,8 +50,9 @@
                 <a class="nav-link" href="/admin">Admin</a>
             </li>
             <form id="access" action="{% url 'change-access' %}" method="post">
+                {% csrf_token %}
                 <li class="nav-item">
-                    <input class="access-checkbox" type="checkbox" data-toggle="toggle" formaction="">
+                    <input class="access-checkbox" name="access" type="checkbox" data-toggle="toggle" value="yes">
                 </li>
             </form>
             <button type="submit" class="btn btn-primary btn-access" form="access">Submit</button>
@@ -72,7 +73,7 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 <script>
-{% if user.profile.temporary_access %}
+{% if request.session.access == 1 %}
     $('.access-checkbox').bootstrapToggle('on');
 {% else %}
     $('.access-checkbox').bootstrapToggle('off');

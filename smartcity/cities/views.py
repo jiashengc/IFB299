@@ -34,7 +34,6 @@ def locationType(request, cityName, locationType):
     foundCity[0] = models.City.objects.get(name=cityName)
     pk = foundCity[0].pk
 
-    if not checkPermission(locationType, request.user.profile.account_type):
         return HttpResponseForbidden()
 
     foundLocations = models.Location.objects.filter(city=pk).filter(type=locationType)
@@ -80,11 +79,11 @@ def checkPermission(locationType, accountType):
             or locationType == 'LI'
 
     if accountType == 'Tourist':
-        return locationType != 'HO'
+        return locationType == 'HO'
 
     if accountType == 'Businessman':
-        return locationType != 'IN'\
-            or locationType != 'HO'
+        return locationType == 'IN'\
+            or locationType == 'HO'
 
     return True
 
