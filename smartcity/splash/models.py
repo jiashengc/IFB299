@@ -68,6 +68,10 @@ class Event(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField(null=True, blank=True)
+    
+    email = models.EmailField(max_length=254)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
 
     STUDENT = 'Student'
     TOURIST = 'Tourist'
@@ -78,6 +82,9 @@ class Profile(models.Model):
         (TOURIST, 'Tourist'),
         (BUSINESSMAN, 'Businessman')
     )
+
+    
+
 
     account_type = models.CharField(max_length=30, choices=ACCOUNTTYPE)
 

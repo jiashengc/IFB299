@@ -27,5 +27,7 @@ urlpatterns = [
     url(r'^hotel/', include('hotel.urls')),
     url(r'^register/', include('register.urls')),
     url(r'^cities/', include('cities.urls')),
-    url(r'^logout/', include('logout.urls'),{'next_page': splashviews.index})
+    url(r'^profile/', include('profile.urls')),
+    url(r'^logout/', include('logout.urls')),
+
 ]

@@ -1,0 +1,94 @@
+{% extends 'navigation/nav.html' %}
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+</head>
+
+<div class="splash">
+    <div class="container">
+        <div class="row">
+            <div id="profile-container">
+
+            </div>
+        </div>
+    </div>
+
+    <!--  div -->
+    <div class="profile-container" style="opacity: 0">
+        <div class="profile">
+            <h2 class="username"></h2>
+            <p class="usertype"></p>
+            <p class="first-name"></p>
+            <p class="last-name"></p>
+            <p class="email"></p>
+            <p class="birthday"></p>
+            <p class="date-joined"></p>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    #profile-container {
+        margin-top: 100px;
+    }
+
+    .profile h2 {
+        font-size: 76px;
+        text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+    }
+
+    .profile-container p {
+        display: inline-block;
+        font-size: 20px;
+        background: rgba(255,255,255,0.55);
+        padding: 15px;
+    }
+
+    .splash {
+        background-image: url("/static/images/aus_background.png");
+        z-index: 1;
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 50px;
+        right: 0; bottom: 0; left: 0;
+    }
+
+    .hvr-underline-from-center:before {
+        background: #3F3D40;
+        border-radius: 3px;
+        height: 3px;
+    }
+
+
+
+</style>
+
+<script>
+    window.profiles = {{ profile | safe }};
+    
+
+
+    let profileContainer = document.getElementsByClassName('profile-container')[0].cloneNode(true);
+    profileContainer.style.opacity = 1;
+
+    let profile = profiles[0].fields;
+    let username = profile.user;
+    let birthday = profile.birth_date;
+    let accountType = profile.account_type;
+    console.log(profile);
+
+    profileContainer.getElementsByClassName('username')[0].innerHTML = '<a>' + username + '</a>';
+    profileContainer.getElementsByClassName('usertype')[0].innerHTML = accountType;
+
+
+    document.getElementById('profile-container').innerHTML += profileContainer.innerHTML;
+
+</script>
+{% endblock %}
