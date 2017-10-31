@@ -34,7 +34,7 @@ def locationType(request, cityName, locationType):
     foundCity[0] = models.City.objects.get(name=cityName)
     pk = foundCity[0].pk
 
-    if not checkPermission(locationType, request.user.profile.account_type):
+    if not checkPermission(locationType, request.user.profile.account_type, request):
         return HttpResponseForbidden()
 
     foundLocations = models.Location.objects.filter(city=pk).filter(type=locationType)
@@ -52,7 +52,7 @@ def location(request, cityName, locationType, location):
     foundCity[0] = models.City.objects.get(name=cityName)
     pk = foundCity[0].pk
 
-    if not checkPermission(locationType, request.user.profile.account_type):
+    if not checkPermission(locationType, request.user.profile.account_type, request):
         return HttpResponseForbidden()
 
     foundLocation = [1]
@@ -74,17 +74,20 @@ def compareLocations(request):
     })
 
 
-def checkPermission(locationType, accountType):
+def checkPermission(locationType, accountType, request):
+    if request.session['access'] == 1:
+        return True
+
     if accountType == 'Student':
         return locationType == 'CL'\
             or locationType == 'LI'
 
     if accountType == 'Tourist':
-        return locationType != 'HO'
+        return locationType == 'HO'
 
     if accountType == 'Businessman':
-        return locationType != 'IN'\
-            or locationType != 'HO'
+        return locationType == 'IN'\
+            or locationType == 'HO'
 
     return True
 
