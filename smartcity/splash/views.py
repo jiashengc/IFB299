@@ -33,8 +33,6 @@ def changeAccess(request):
         request.session['access'] = 1
         # s.access = True
 
-    request.session['access'] = 1
-
     request.session.modified = True
 
     return HttpResponseRedirect('/')
