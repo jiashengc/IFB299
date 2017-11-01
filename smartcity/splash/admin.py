@@ -17,6 +17,10 @@ class EventsAdmin(admin.ModelAdmin):
     list_filter = ('type','city')
 
 
+# class LogAdmin(admin.ModelAdmin):
+#
+#
+
 admin.site.register(Location, LocationAdmin)
 admin.site.register(Event, EventsAdmin)
 

@@ -57,6 +57,8 @@ def location(request, cityName, locationType, location):
 
     foundLocation = [1]
     foundLocation[0] = models.Location.objects.get(pk=location)
+    log = models.PreviousLocation(user=request.user, location=foundLocation[0])
+    log.save()
 
     return render(request, 'cities/location.html', context = {
         "city": serializers.serialize('json', foundCity),

@@ -86,10 +86,13 @@ class Profile(models.Model):
         (BUSINESSMAN, 'Businessman')
     )
 
-    
-
-
     account_type = models.CharField(max_length=30, choices=ACCOUNTTYPE)
+
+class PreviousLocation(models.Model):
+    user = models.ForeignKey(User)
+    location = models.ForeignKey(Location)
+
+    time = models.DateTimeField(auto_now_add=True)
 
 
 @receiver(post_save, sender=User)
