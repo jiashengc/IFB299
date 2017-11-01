@@ -30,6 +30,11 @@
 
                 <h4>Phone:</h4>
                 <p class="location-phone"></p>
+
+
+                <h4 class="LDtitle" >Departments:</h4>
+                <p class="location-Departments"></p>
+
             </div>
         </div>
 
@@ -52,6 +57,28 @@
         height: 500px;
         width: 650px;
     }
+
+    .location-Departments {
+        opacity: 0;
+    }
+
+    .LDtitle {
+        opacity: 0;
+    }    
+
+    .splash {
+        z-index: 1;
+        background: url("/static/images/brisbane.jpg");
+        background-size: cover;
+        top: 50px;
+        right: 0; bottom: 0; left: 0;
+    }
+
+    .location {
+        color: white;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
 </style>
 
 <script>
@@ -81,6 +108,7 @@
     let address = locations.address;
     let emailAddress = locations.emailAddress;
     let phone = locations.phone;
+    let departments = locations.departments;
     let type = returnType(locations.type);
 
     document.getElementsByClassName('location-name')[0].innerHTML = locationName;
@@ -90,6 +118,14 @@
     document.getElementsByClassName('location-emailAddress')[0].innerHTML = emailAddress;
     document.getElementsByClassName('location-phone')[0].innerHTML = phone;
     document.getElementsByClassName('location-type')[0].innerHTML += '<a href="../">' + type + '</a>';
+
+    if (departments != null ) {
+        document.getElementsByClassName('location-Departments')[0].innerHTML = departments;
+        document.getElementsByClassName('location-Departments')[0].style.opacity = 1;
+        document.getElementsByClassName('LDtitle')[0].style.opacity = 1;
+    } ;  
+
+
 
     // Google Maps API
     let map;
