@@ -37,5 +37,135 @@
       "description": "RMIT University is an Australian public research university located in Melbourne, Victoria",
       "city": 3
     }
+  },
+  {
+    "pk": 204,
+    "model": "splash.Location",
+    "fields": {
+      "name": "State Library of Victoria",
+      "address": "328 Swanston St, Melbourne VIC 3000",
+      "emailAddress": "",
+      "phone": "(03) 8664 7000",
+      "type": "LI",
+      "description": "State Library Victoria is the central library of the state of Victoria, Australia, located in Melbourne.",
+      "city": 3
+    }
+  },
+  {
+    "pk": 205,
+    "model": "splash.Location",
+    "fields": {
+      "name": "City Library",
+      "address": "253 Flinders Ln, Melbourne VIC 3000",
+      "emailAddress": "",
+      "phone": "(03) 9658 9500",
+      "type": "LI",
+      "description": "",
+      "city": 3
+    }
+  },
+  {
+    "pk": 206,
+    "model": "splash.Location",
+    "fields": {
+      "name": "East Melbourne Library",
+      "address": "122 George St, East Melbourne VIC 3002",
+      "emailAddress": "",
+      "phone": "(03) 9658 9600",
+      "type": "LI",
+      "description": "",
+      "city": 3
+    }
+  },
+  {
+    "pk": 207,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Mercure Melbourne Albert Park",
+      "address": "65 Queens Rd, Melbourne VIC 3004",
+      "emailAddress": "",
+      "phone": "(03) 9529 4300",
+      "type": "HO",
+      "description": "",
+      "city": 3
+    }
+  },
+  {
+    "pk": 208,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Fitzroy Gardens",
+      "address": "Wellington Parade, East Melbourne VIC 3002",
+      "emailAddress": "",
+      "phone": "(03) 9658 9658",
+      "type": "PA",
+      "description": "The Fitzroy Gardens are 26 hectares located on the southeastern edge of the Melbourne Central Business District in East Melbourne, Victoria, Australia.",
+      "city": 3
+    }
+  },
+  {
+    "pk": 209,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Melbourne Zoo",
+      "address": "Elliott Ave, Parkville VIC 3052",
+      "emailAddress": "",
+      "phone": "1300 966 784",
+      "type": "ZO",
+      "description": "The Royal Melbourne Zoological Gardens', commonly known as the Zoo, contains more than 320 animal species from Australia and around the world. The zoo is 4 kilometres north of the centre of Melbourne.",
+      "city": 3
+    }
+  },
+  {
+    "pk": 210,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Melbourne Central Shopping Centre",
+      "address": "211 La Trobe St, Melbourne VIC 3000",
+      "emailAddress": "",
+      "phone": "",
+      "type": "MA",
+      "description": "Melbourne Central is a large shopping centre, office, and public transport hub in the city of Melbourne, Australia",
+      "city": 3
+    }
+  },
+  {
+    "pk": 211,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Immigration Museum",
+      "address": "400 Flinders St, Melbourne VIC 3000",
+      "emailAddress": "",
+      "phone": "1",
+      "type": "MU",
+      "description": "The Immigration Museum is a museum primarily displaying Australia's immigration history. It is located on Flinders Street in Melbourne, Victoria, in the Old Customs House",
+      "city": 3
+    }
+  },
+  {
+    "pk": 212,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Vue de monde",
+      "address": "Rialto Towers, 525 Collins St, Melbourne VIC 3000",
+      "emailAddress": "",
+      "phone": "(03) 9691 3888",
+      "type": "RE",
+      "description": "Elegant fine dining restaurant in the Rialto building, with tasting menus and sweeping city views.",
+      "city": 3
+    }
+  },
+  {
+    "pk": 213,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Australian Industry & Defence Network Victoria Inc.",
+      "address": "231 High St, Ashburton VIC 3147",
+      "emailAddress": "",
+      "phone": "(03) 9886 9278",
+      "type": "IN",
+      "description": "",
+      "city": 3
+    }
   }
 ]
