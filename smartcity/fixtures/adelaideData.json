@@ -1,0 +1,211 @@
+[
+  {
+    "pk": 301,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Westfield Tea Tree Plaza",
+      "address": "976 North East Road, Modbury SA 5092",
+      "emailAddress": "",
+      "phone": "(08) 8264 4011",
+      "type": "MA",
+      "description": "Westfield Tea Tree Plaza is a large shopping centre located in Modbury serving as a shopping hub for Adelaide's growing north eastern suburbs.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 302,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Westfield Marion",
+      "address": "297 Diagonal Rd, Oaklands Park SA 5046",
+      "emailAddress": "",
+      "phone": " (08) 8298 1188",
+      "type": "MA",
+      "description": "Westfield Marion is the largest shopping complex in Adelaide, South Australia, located in Oaklands Park, serving greater Southern Adelaide.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 303,
+    "model": "splash.Location",
+    "fields": {
+      "name": "University of South Australia",
+      "address": "101 Currie St, Adelaide SA 5001",
+      "emailAddress": "",
+      "phone": "(08) 8302 6611",
+      "type": "CL",
+      "description": "The University of South Australia is a public research university in the Australian state of South Australia. It is the largest university in South Australia with more than 32,000 students.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 304,
+    "model": "splash.Location",
+    "fields": {
+      "name": "University of Adelaide",
+      "address": "Adelaide SA 5005",
+      "emailAddress": "",
+      "phone": "(08) 8313 5208",
+      "type": "CL",
+      "description": "The University of Adelaide is a public university located in Adelaide, South Australia. Established in 1874, it is the third-oldest university in Australia.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 305,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Mayfair Hotel",
+      "address": "45 King William St, Adelaide SA 5000",
+      "emailAddress": "",
+      "phone": "(08) 8210 8888",
+      "type": "HO",
+      "description": "Chic rooms and suites with 55-inch flat-screens in an upmarket hotel with dining & 5 meeting spaces.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 306,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Peppers Waymouth Hotel",
+      "address": "55 Waymouth St, Adelaide SA 5000",
+      "emailAddress": "",
+      "phone": "(08) 8115 8888",
+      "type": "HO",
+      "description": "Modern choice offering chic rooms, plus a relaxed restaurant, a hip lounge and an indoor pool.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 307,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Adelaide Zoo",
+      "address": "Frome Rd, Adelaide SA 5000",
+      "emailAddress": "",
+      "phone": "(08) 8267 3255",
+      "type": "ZO",
+      "description": "Adelaide Zoo is Australia's second oldest zoo, and like other leading zoos in Australia, including Melbourne Zoo, Taronga Zoo, and Perth Zoo it is operated on a non-profit basis.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 308,
+    "model": "splash.Location",
+    "fields": {
+      "name": "South Australian Meseum",
+      "address": "North Terrace, Adelaide SA 5000",
+      "emailAddress": "",
+      "phone": "(08) 8207 7500",
+      "type": "MU",
+      "description": "The South Australian Museum is a natural history museum and research institution in Adelaide, South Australia, founded in 1856. It occupies a complex of buildings on North Terrace in the cultural precinct of the Adelaide Parklands.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 309,
+    "model": "splash.Location",
+    "fields": {
+      "name": "South Australian Maritime Meseum",
+      "address": "126 Lipson St, Port Adelaide SA 5015",
+      "emailAddress": "",
+      "phone": "(08) 8207 6255",
+      "type": "MU",
+      "description": "The South Australian Maritime Museum is a state government museum, part of the History Trust of South Australia.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 310,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Orana",
+      "address": "1/285 Rundle St, Adelaide SA 5000",
+      "emailAddress": "",
+      "phone": "(08) 8232 3444",
+      "type": "RE",
+      "description": "Upscale Modern Australian tasting menu in an elegant, intimate restaurant with timber styling.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 311,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Appellation Restaurant",
+      "address": "Seppeltsfield Rd & Stonewell Rd, Marananga SA 5355",
+      "emailAddress": "",
+      "phone": "(08) 8562 4144",
+      "type": "RE",
+      "description": "Elegant Modern Australian cuisine and choice Barossa wines in a bright, sophisticated setting.",
+      "city": 5
+    }
+  },
+  {
+    "pk": 312,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Monarto Zoo",
+      "address": "Old Princes Hwy, Monarto South SA 5254",
+      "emailAddress": "",
+      "phone": "(08) 8534 4100",
+      "type": "ZO",
+      "description": "Monarto Zoological Park is a 1,500-hectare open range zoo located in South Australia administered by the Royal Zoological Society of South Australia. It is located at Monarto approximately 70 kilometres from Adelaide's centre. ",
+      "city": 5
+    }
+  },
+  {
+    "pk": 313,
+    "model": "splash.Location",
+    "fields": {
+      "name": "State Library of South Australia",
+      "address": " North Terrace & Kintore Ave, Adelaide SA 5000",
+      "emailAddress": "",
+      "phone": "(08) 8207 7250",
+      "type": "LI",
+      "description": "The State Library of South Australia, located on North Terrace, Adelaide, is the official library of the Australian state of South Australia. ",
+      "city": 5
+    }
+  },
+  {
+    "pk": 314,
+    "model": "splash.Location",
+    "fields": {
+      "name": "St Peters Library",
+      "address": " 101 Payneham Rd, St Peters SA 5069",
+      "emailAddress": "",
+      "phone": "(08) 8334 0200",
+      "type": "LI",
+      "description": "",
+      "city": 5
+    }
+  },
+  {
+    "pk": 315,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Mark Oliphant Conservation Park",
+      "address": "Heathfield SA 5153",
+      "emailAddress": "",
+      "phone": "(08) 8204 1910",
+      "type": "PA",
+      "description": "",
+      "city": 5
+    }
+  },
+  {
+    "pk": 316,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Deep Creak Conservation Park",
+      "address": "Boat Harbor Rd, Deep Creek SA 5204",
+      "emailAddress": "",
+      "phone": "(08) 8598 0263",
+      "type": "PA",
+      "description": "Deep Creek Conservation Park is a protected area in the Australian state of South Australia located on the southern coast of Fleurieu Peninsula in the gazetted localities of Deep Creek and Delamere about 11 kilometres east of Cape Jervis.",
+      "city": 5
+    }
+  }
+  
+]
