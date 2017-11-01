@@ -46,6 +46,7 @@ class Location(models.Model):
         return self.name
 
 
+# Define model for Events (similar to locations except it has a ticket link url and a date time field)    
 class Event(models.Model):
     TYPE = (('Live Music', 'Live Music'),
             ('Sports', 'Sports'))
@@ -94,7 +95,8 @@ class PreviousLocation(models.Model):
 
     time = models.DateTimeField(auto_now_add=True)
 
-
+    
+# Dynamically update the user profile 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
     if created:
