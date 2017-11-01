@@ -1,0 +1,41 @@
+[
+  {
+    "pk": 201,
+    "model": "splash.Location",
+    "fields": {
+      "name": "University of Melbourne",
+      "address": "Parkville VIC 3010",
+      "emailAddress": "",
+      "phone": "(03) 9035 5511",
+      "type": "CL",
+      "description": "The University of Melbourne is a public research university located in Melbourne, Australia.",
+      "city": 3
+    }
+  },
+  {
+    "pk": 202,
+    "model": "splash.Location",
+    "fields": {
+      "name": "Monash University",
+      "address": "Wellington Rd, Clayton VIC 3800",
+      "emailAddress": "",
+      "phone": "(03) 9905 4000",
+      "type": "CL",
+      "description": "Monash University is an Australian public research university based in Melbourne, Australia.",
+      "city": 3
+    }
+  },
+  {
+    "pk": 203,
+    "model": "splash.Location",
+    "fields": {
+      "name": "RMIT University",
+      "address": "124 La Trobe St, Melbourne VIC 3000",
+      "emailAddress": "",
+      "phone": "(03) 9925 2000",
+      "type": "CL",
+      "description": "RMIT University is an Australian public research university located in Melbourne, Victoria",
+      "city": 3
+    }
+  }
+]
