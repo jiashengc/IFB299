@@ -11,7 +11,8 @@ def profile(request):
     if not request.user.is_authenticated():
         return HttpResponseRedirect('/login')
 
-    profile = models.Profile.objects.all()
+    profile = [1]
+    profile[0] = request.user.profile
     return render(request, 'profiles/profile.html', context={
         "profile": serializers.serialize('json', profile),
     })

@@ -21,8 +21,9 @@
     <!--  div -->
     <div class="profile-container" style="opacity: 0">
         <div class="profile">
-            <h2 class="username"></h2>
+            <h2 class="username"> {{user.get_username }} </h2>
             <p class="usertype"></p>
+            <p class="user-num"></p>
             <p class="first-name"></p>
             <p class="last-name"></p>
             <p class="email"></p>
@@ -36,6 +37,8 @@
 
     #profile-container {
         margin-top: 100px;
+        text-align: center;
+        width: 100vw ;
     }
 
     .profile h2 {
@@ -48,6 +51,7 @@
         font-size: 20px;
         background: rgba(255,255,255,0.55);
         padding: 15px;
+
     }
 
     .splash {
@@ -79,7 +83,7 @@
     profileContainer.style.opacity = 1;
 
     let profile = profiles[0].fields;
-    let username = profile.user;
+    let usernum = profile.user;
     let birthday = profile.birth_date;
     let accountType = profile.account_type;
     let email = profile.email;
@@ -87,7 +91,7 @@
     let lastName = profile.last_name;
     console.log(profile);
 
-    profileContainer.getElementsByClassName('username')[0].innerHTML = 'USER: ' + username;
+    profileContainer.getElementsByClassName('user-num')[0].innerHTML = 'User Number: ' + usernum;
     profileContainer.getElementsByClassName('usertype')[0].innerHTML = 'Account Type: ' + accountType;
     profileContainer.getElementsByClassName('birthday')[0].innerHTML = 'Birthday: ' +birthday;
     profileContainer.getElementsByClassName('email')[0].innerHTML = 'Email: ' +email;
