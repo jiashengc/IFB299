@@ -4,4 +4,3 @@
 smartcity/.idea/
 smartcity/.idea/workspace.xml
 smartcity/register/tests.py
-smartcity/db.sqlite3
