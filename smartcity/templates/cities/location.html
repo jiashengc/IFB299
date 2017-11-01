@@ -120,7 +120,13 @@
     document.getElementsByClassName('location-type')[0].innerHTML += '<a href="../">' + type + '</a>';
 
     if (departments != null ) {
-        document.getElementsByClassName('location-Departments')[0].innerHTML = departments;
+        let departmentsArray = departments.split(",");
+        let departmentsString = "";
+        for (let i = 0; i < departmentsArray.length; i++) {
+            departmentsString += departmentsArray[i] + "<br>";
+        }
+
+        document.getElementsByClassName('location-Departments')[0].innerHTML = departmentsString;
         document.getElementsByClassName('location-Departments')[0].style.opacity = 1;
         document.getElementsByClassName('LDtitle')[0].style.opacity = 1;
     } ;  
